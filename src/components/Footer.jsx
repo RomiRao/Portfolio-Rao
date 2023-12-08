@@ -7,19 +7,19 @@ import EmailIcon from '@mui/icons-material/Email';
 
 export default function Footer() {
   return (
-    <Box py={3}>
+    <Box py={1}>
       <Toolbar sx={{justifyContent: 'center'}}>
         <Breadcrumbs separator="" aria-label="breadcrumb" >
-          <IconButton component='a'>
+          <IconButton component='a' href="https://www.linkedin.com/in/romina-rao-50a61a1ba/" target="_blank">
             <LinkedInIcon color="primary" />
           </IconButton>
-          <IconButton component='a'>
+          <IconButton component='a' href="https://www.instagram.com/renga.art/" target="_blank">
             <InstagramIcon color="primary" />
           </IconButton>
-          <IconButton component='a'>
+          <IconButton component='a' href="https://github.com/RomiRao" target="_blank">
             <GitHubIcon color="primary" />
           </IconButton>
-          <IconButton component='a'>
+          <IconButton component='a' href="mailto:rominarao96@gmail.com" target="_blank">
             <EmailIcon color="primary" />
           </IconButton>
         </Breadcrumbs>
