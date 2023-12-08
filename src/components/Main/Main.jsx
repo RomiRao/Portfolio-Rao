@@ -1,5 +1,10 @@
+import { Container } from '@mui/material'
+import Profile from  './Profile.jsx'
+
 export default function Main() {
   return (
-    <div>Main</div>
+    <Container sx={{display: 'flex', justifyContent: 'center'}}>
+      <Profile/>
+    </Container>
   )
 }
