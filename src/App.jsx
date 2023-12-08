@@ -1,16 +1,16 @@
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 import Footer from './components/Footer.jsx'
-import Navbar from './components/Navbar.jsx'
+import Navbar from './components/Navbar/Navbar.jsx'
 import Main from './components/Main/Main.jsx'
 
 
 export default function App() {
   return (
-    <Container sx={{height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', bgcolor: 'green'}}>
+    <Box sx={{height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
       <Navbar />
       <Main />
       <Footer />
-    </Container>
+    </Box>
   )
 }
 
