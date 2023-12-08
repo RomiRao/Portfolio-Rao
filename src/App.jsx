@@ -6,7 +6,7 @@ import Main from './components/Main/Main.jsx'
 
 export default function App() {
   return (
-    <Box sx={{height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', bgcolor: 'green'}}>
+    <Box sx={{height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
       <Navbar />
       <Main />
       <Footer />
