@@ -3,11 +3,11 @@ import FolderSharedIcon from '@mui/icons-material/FolderShared';
 import CallIcon from '@mui/icons-material/Call';
 import HomeIcon from '@mui/icons-material/Home';
 
-export default function NavListDrawer() {
+export default function NavListDrawer({setOpen}) {
   return (
     <Box sx={{width: 280 }} component='nav'>
             <List>
-                <ListItem disablePadding>
+                <ListItem disablePadding onClick={() => setOpen(false)}>
                     <ListItemButton component='a' href='#projects'>
                         <ListItemIcon>
                             <FolderSharedIcon />
@@ -15,7 +15,7 @@ export default function NavListDrawer() {
                         <ListItemText primary='Projects'/>
                     </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding>
+                <ListItem disablePadding onClick={() => setOpen(false)}>
                     <ListItemButton component='a' href='#contact'>
                         <ListItemIcon>
                             <CallIcon />
@@ -23,7 +23,7 @@ export default function NavListDrawer() {
                         <ListItemText primary='Contact'/>
                     </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding>
+                <ListItem disablePadding onClick={() => setOpen(false)}>
                     <ListItemButton component='a' href='#'>
                         <ListItemIcon>
                             <HomeIcon />
