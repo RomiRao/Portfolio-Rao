@@ -52,7 +52,6 @@ export default function Navbar() {
       >
           <NavListDrawer setOpen={setOpen} />
       </Drawer>
-   </>
+  </>
   )
 }
-//
