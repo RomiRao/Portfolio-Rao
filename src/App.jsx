@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import Footer from './components/Footer.jsx'
-import Navbar from './components/Navbar.jsx'
+import Navbar from './components/Navbar/Navbar.jsx'
 import Main from './components/Main/Main.jsx'
 
 
