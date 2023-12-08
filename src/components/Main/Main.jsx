@@ -3,7 +3,7 @@ import Profile from  './Profile.jsx'
 
 export default function Main() {
   return (
-    <Container sx={{display: 'flex', justifyContent: 'space-between'}}>
+    <Container sx={{display: 'flex', justifyContent: 'center'}}>
       <Profile/>
     </Container>
   )
