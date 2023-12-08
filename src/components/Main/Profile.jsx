@@ -15,13 +15,13 @@ export default function Profile() {
     <Container sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}>
       <Img src={image}/>
       <Box>
-        <Typography variant="h4">
+        <Typography variant="h4" color='secondary'>
             Hi! I'm
         </Typography>
-        <Typography variant="h3">
+        <Typography variant="h3" color='primary'>
             Romina Rao
         </Typography>
-        <Typography variant="h5">
+        <Typography variant="h5" color='inherit'>
             Developer, traveler and artist.
         </Typography>
       </Box>
