@@ -1,9 +1,9 @@
-import { Box, Paper } from "@mui/material";
+import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Main from './components/Main/Main.jsx'
 import { useState } from "react";
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider, Box } from '@mui/material';
 
 import FolderSharedIcon from '@mui/icons-material/FolderShared';
 import CallIcon from '@mui/icons-material/Call';
@@ -14,14 +14,14 @@ export default function App() {
   
   const navLinks = [
     {
-      title:'Projects', path:'#projects', icon: <FolderSharedIcon/ >
+      title:'Projects', path:'/Projects', icon: <FolderSharedIcon/ >
     },
     {
-      title:'Home', path:'#home', icon: <CallIcon/ >
+      title:'Contact', path:'/Contact', icon: <CallIcon/ >
     },
     {
-      title:'Contact', path:'#contact', icon: <HomeIcon/ >
-    }
+      title:'Home', path:'/', icon: <HomeIcon/ > 
+    },
   ]
 
 
@@ -38,14 +38,14 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Paper elevation={0}>
+      <BrowserRouter>
+        <CssBaseline />
         <Box sx={{height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
-          <Navbar setView={setView} setMode={setMode} mode={mode} />
-          <Main view={view} />
+          <Navbar setView={setView} setMode={setMode} mode={mode} navLinks={navLinks} />
+          <Main view={view} navLinks={navLinks} />
           <Footer />
         </Box>
-      </Paper>
+      </BrowserRouter>
     </ThemeProvider>
   )
 }

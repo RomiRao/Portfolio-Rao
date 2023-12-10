@@ -1,5 +1,6 @@
 import { AppBar, Breadcrumbs, IconButton, Link, Toolbar, Drawer, Icon } from "@mui/material";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 //icons
 import MenuIcon from '@mui/icons-material/Menu';
 import NavListDrawer from './NavListDrawer'
@@ -7,25 +8,13 @@ import HomeIcon from '@mui/icons-material/Home';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
-export default function Navbar({setView, mode, setMode}) {
+export default function Navbar({setView, mode, setMode, navLinks}) {
 
   const handleClick = () => {
     mode ? setMode(false) : setMode(true)
   }
 
   const [open, setOpen] = useState(false);
-
-  const navLinks = [
-    {
-      title:'Projects', path:'#projects', icon: 'Projects'
-    },
-    {
-      title:'Home', path:'#home', icon: 'Profile'
-    },
-    {
-      title:'Contact', path:'#contact', icon: 'Contact'
-    }
-  ]
 
   return (
     <>
@@ -37,12 +26,12 @@ export default function Navbar({setView, mode, setMode}) {
         </IconButton>
         <Breadcrumbs separator="/" aria-label="breadcrumb" sx={{display: {xs: 'none', sm: 'flex'}}}>
           {navLinks.filter(item => item.title != 'Home').map((item) => (
-            <Link underline="hover" key={item.title} color="inherit" href={item.path} onClick={() =>  setView(item.title)}>
+            <Link underline="hover" key={item.title} color="inherit" component={NavLink} to={item.path}>
               {item.title}
             </Link>
           ))}
         </Breadcrumbs>
-        <IconButton  onClick={() =>  setView('Profile')}>
+        <IconButton  component={NavLink} to='/'>
           <HomeIcon color='primary' sx={{display: {xs: 'none', sm: 'flex'}}}/>
         </IconButton>
         <IconButton onClick={() => setOpen(true)} sx={{display: {xs: 'flex', sm: 'none'}}}>
@@ -56,7 +45,7 @@ export default function Navbar({setView, mode, setMode}) {
       onClose={() => setOpen(false)}
       sx={{display: {xs: 'flex', sm: 'none'}}}
       >
-          <NavListDrawer setOpen={setOpen} navLinks={navLinks} setView={setView} />
+          <NavListDrawer setOpen={setOpen} navLinks={navLinks}/>
       </Drawer>
   </>
   )
