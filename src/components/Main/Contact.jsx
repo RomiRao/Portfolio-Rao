@@ -1,10 +1,11 @@
-import { Box, Stack, Typography, Divider, IconButton } from "@mui/material";
+import { Box, Stack, Typography, Divider, IconButton, Container } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import image from "../../assets/profile-photo.jpg"
 import styled from '@emotion/styled'
+import { Padding } from "@mui/icons-material";
 
 
 export default function Contact() {
@@ -13,13 +14,13 @@ export default function Contact() {
     width: '80%',
     maxWidth: 330,
     maxHeight: 330,
-    borderRadius: '50%'
+    borderRadius: '50%',
+    marginBottom: 5
   })
 
   return (
-    <>
-    <Img src={image}/>
-    <Box sx={{p: 4, boxShadow: 5, borderRadius: 1, width: '90%', maxWidth: '500px', mt: {xs: 6, sm: 0}}}>
+    <Container sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center',flexWrap: {md: 'wrap'} ,flexDirection: {xs: 'column-reverse', sm: 'column-reverse', md: 'row'}}}>
+    <Box sx={{p: 4, boxShadow: 5, borderRadius: 1, width: '90%', maxWidth: '500px', my: 6}}>
       <Box>
         <Typography variant="h6" textAlign='center' mb={2}>
           About me
@@ -65,6 +66,7 @@ export default function Contact() {
         </Stack>
       </Box>
     </Box>
-    </>
+    <Img src={image}/>
+    </Container>
   )
 }
