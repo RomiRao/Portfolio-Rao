@@ -6,15 +6,15 @@ export default function Profile() {
 
   const Img = styled('img')({
     width: 330,
-    height: '100%',
+    height: '90%',
     objectFit: 'cover',
     objectPosition: 'center',
   })
 
   return (
-    <>
+    <Container sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexWrap: 'wrap'}}>
       <Img src={image}/>
-      <Box>
+      <Box my={5}>
         <Typography variant="h4" color='secondary'>
             Hi! I'm
         </Typography>
@@ -25,6 +25,6 @@ export default function Profile() {
             Developer, traveler and artist.
         </Typography>
       </Box>
-    </>
+    </Container>
   )
 }
