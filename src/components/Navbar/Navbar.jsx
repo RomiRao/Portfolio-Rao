@@ -5,8 +5,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import NavListDrawer from './NavListDrawer'
 import HomeIcon from '@mui/icons-material/Home';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
-export default function Navbar({setView}) {
+export default function Navbar({setView, mode, setMode}) {
+
+  const handleClick = () => {
+    mode ? setMode(false) : setMode(true)
+  }
 
   const [open, setOpen] = useState(false);
 
@@ -26,8 +31,9 @@ export default function Navbar({setView}) {
     <>
     <AppBar sx={{bgcolor: 'transparent', boxShadow: 'none'}} position="sticky">
       <Toolbar sx={{justifyContent: 'space-between'}}>
-        <IconButton>
-          <DarkModeIcon color='primary'/>
+        <IconButton onClick={() => handleClick()}>
+          {!mode && <DarkModeIcon color='primary'/>}
+          {mode && <LightModeIcon color='primary'/>}
         </IconButton>
         <Breadcrumbs separator="/" aria-label="breadcrumb" sx={{display: {xs: 'none', sm: 'flex'}}}>
           {navLinks.filter(item => item.title != 'Home').map((item) => (
