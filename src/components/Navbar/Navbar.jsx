@@ -1,4 +1,4 @@
-import { AppBar, Breadcrumbs, IconButton, Link, Toolbar, Drawer } from "@mui/material";
+import { AppBar, Breadcrumbs, IconButton, Link, Toolbar, Drawer, Icon } from "@mui/material";
 import { useState } from "react";
 //icons
 import MenuIcon from '@mui/icons-material/Menu';
@@ -30,7 +30,9 @@ export default function Navbar() {
     <>
     <AppBar sx={{bgcolor: 'transparent', boxShadow: 'none'}} position="sticky">
       <Toolbar sx={{justifyContent: 'space-between'}}>
-        <DarkModeIcon color='primary'/>
+        <IconButton>
+          <DarkModeIcon color='primary'/>
+        </IconButton>
         <Breadcrumbs separator="/" aria-label="breadcrumb" sx={{display: {xs: 'none', sm: 'flex'}}}>
           {navLinks.filter(item => item.title != 'Home').map((item) => (
             <Link underline="hover" key={item.title} color="inherit" href={item.path} onClick={(e) => handleClick(e)}>
@@ -38,7 +40,9 @@ export default function Navbar() {
             </Link>
           ))}
         </Breadcrumbs>
-        <HomeIcon color='primary' sx={{display: {xs: 'none', sm: 'flex'}}}/>
+        <IconButton>
+          <HomeIcon color='primary' sx={{display: {xs: 'none', sm: 'flex'}}}/>
+        </IconButton>
         <IconButton onClick={() => setOpen(true)} sx={{display: {xs: 'flex', sm: 'none'}}}>
           <MenuIcon color="primary" />
         </IconButton>
