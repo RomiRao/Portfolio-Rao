@@ -2,7 +2,7 @@ import { Box, Container, Typography } from "@mui/material";
 import styled from '@emotion/styled'
 import image from '../../assets/profile-picture.png'
 
-export default function Profile() {
+export default function Home() {
 
   const Img = styled('img')({
     width: 330,

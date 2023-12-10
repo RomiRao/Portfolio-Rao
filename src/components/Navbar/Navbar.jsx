@@ -17,13 +17,13 @@ export default function Navbar({setView, mode, setMode}) {
 
   const navLinks = [
     {
-      title:'Projects', path:'#projects', ref: 'Projects'
+      title:'Projects', path:'#projects', icon: 'Projects'
     },
     {
-      title:'Home', path:'#home', ref: 'Profile'
+      title:'Home', path:'#home', icon: 'Profile'
     },
     {
-      title:'Contact', path:'#contact', ref: 'Contact'
+      title:'Contact', path:'#contact', icon: 'Contact'
     }
   ]
 
@@ -37,7 +37,7 @@ export default function Navbar({setView, mode, setMode}) {
         </IconButton>
         <Breadcrumbs separator="/" aria-label="breadcrumb" sx={{display: {xs: 'none', sm: 'flex'}}}>
           {navLinks.filter(item => item.title != 'Home').map((item) => (
-            <Link underline="hover" key={item.title} color="inherit" href={item.path} onClick={() =>  setView(item.ref)}>
+            <Link underline="hover" key={item.title} color="inherit" href={item.path} onClick={() =>  setView(item.title)}>
               {item.title}
             </Link>
           ))}

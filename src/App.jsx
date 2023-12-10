@@ -5,7 +5,26 @@ import Main from './components/Main/Main.jsx'
 import { useState } from "react";
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 
+import FolderSharedIcon from '@mui/icons-material/FolderShared';
+import CallIcon from '@mui/icons-material/Call';
+import HomeIcon from '@mui/icons-material/Home';
+
 export default function App() {
+
+  
+  const navLinks = [
+    {
+      title:'Projects', path:'#projects', icon: <FolderSharedIcon/ >
+    },
+    {
+      title:'Home', path:'#home', icon: <CallIcon/ >
+    },
+    {
+      title:'Contact', path:'#contact', icon: <HomeIcon/ >
+    }
+  ]
+
+
   const [mode, setMode] = useState(false)
 
   const theme = createTheme({

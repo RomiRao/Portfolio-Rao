@@ -6,9 +6,7 @@ import Projects from "./Projects.jsx"
 export default function Main({view}) {
   return (
     <Container sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
-      {view === 'Profile' && <Profile />}
-      {view === 'Projects' && <Projects />}
-      {view === 'Contact' && <Contact />}
+
     </Container>
   )
 }
