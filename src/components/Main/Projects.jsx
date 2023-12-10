@@ -31,11 +31,18 @@ export default function Projects() {
       description: 'A fun project using JavaScript for the first time!',
       repository: 'https://github.com/RomiRao/meme-generator',
       deploy: 'https://romirao.github.io/meme-generator/'
-    }
+    },
+    {
+      title: 'My first Portfolio',
+      img: 'https://camo.githubusercontent.com/e2ac60df5b8cc9e6812241600c1f256e9053a3e020531c8f7ef5e2df37ad7ac0/68747470733a2f2f726f6d6972616f2e6769746875622e696f2f506f7274666f6c696f2d526f6d696e612f7265736f75726365732f726f6d6972616f2e6769746875622e696f5f506f7274666f6c696f2d526f6d696e615f2e706e67',
+      description: 'This is my very first project. I made a portfolio only using HTML and CSS. Of course, I made the illustrations as well ;)',
+      repository: 'https://github.com/RomiRao/Portfolio-Romina',
+      deploy: 'https://romirao.github.io/Portfolio-Romina/'
+    },
   ]
 
   return (
-    <Box>
+    <Box display='flex' justifyContent='center' flexWrap='wrap' py={5}>
       {projects.map((project) => <ProjectCard key={project.title} title={project.title} img={project.img} description={project.description} repository={project.repository} deploy={project.deploy} />)}
     </Box>
   )

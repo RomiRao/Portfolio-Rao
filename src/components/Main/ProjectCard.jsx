@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 
 export default function ProjectCard({title, img, description, repository, deploy}) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300, m: 3, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 150 }}
         image={img}
         title={title}
         />
