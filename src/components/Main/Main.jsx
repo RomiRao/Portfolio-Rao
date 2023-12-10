@@ -4,7 +4,7 @@ import Contact from  './Contact.jsx'
 
 export default function Main() {
   return (
-    <Container sx={{display: 'flex', justifyContent: 'center'}}>
+    <Container sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexWrap: 'wrap'}}>
       <Contact/>
     </Container>
   )
