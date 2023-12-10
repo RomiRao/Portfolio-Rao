@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import Footer from './components/Footer.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Main from './components/Main/Main.jsx'
@@ -20,11 +20,13 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
-        <Navbar setView={setView} setMode={setMode} mode={mode} />
-        <Main view={view} />
-        <Footer />
-      </Box>
+      <Paper elevation={0}>
+        <Box sx={{height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+          <Navbar setView={setView} setMode={setMode} mode={mode} />
+          <Main view={view} />
+          <Footer />
+        </Box>
+      </Paper>
     </ThemeProvider>
   )
 }
