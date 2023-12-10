@@ -50,7 +50,7 @@ export default function Navbar({setView}) {
       onClose={() => setOpen(false)}
       sx={{display: {xs: 'flex', sm: 'none'}}}
       >
-          <NavListDrawer setOpen={setOpen} setView={setView} />
+          <NavListDrawer setOpen={setOpen} navLinks={navLinks} setView={setView} />
       </Drawer>
   </>
   )
