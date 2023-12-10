@@ -6,7 +6,7 @@ import NavListDrawer from './NavListDrawer'
 import HomeIcon from '@mui/icons-material/Home';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-export default function Navbar() {
+export default function Navbar({setView}) {
 
   const [open, setOpen] = useState(false);
 
@@ -54,7 +54,7 @@ export default function Navbar() {
       onClose={() => setOpen(false)}
       sx={{display: {xs: 'flex', sm: 'none'}}}
       >
-          <NavListDrawer setOpen={setOpen} />
+          <NavListDrawer setOpen={setOpen} setView={setView} />
       </Drawer>
   </>
   )
