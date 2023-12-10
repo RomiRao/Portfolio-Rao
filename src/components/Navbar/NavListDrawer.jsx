@@ -3,34 +3,28 @@ import FolderSharedIcon from '@mui/icons-material/FolderShared';
 import CallIcon from '@mui/icons-material/Call';
 import HomeIcon from '@mui/icons-material/Home';
 
-export default function NavListDrawer({setOpen}) {
+export default function NavListDrawer({setOpen, setView, navLinks }) {
+
+    const linkFunction = (ref) => {
+        setView(ref)
+        setOpen(false)
+    }
+
   return (
     <Box sx={{width: 280 }} component='nav'>
             <List>
-                <ListItem disablePadding onClick={() => setOpen(false)}>
-                    <ListItemButton component='a' href='#projects'>
-                        <ListItemIcon>
-                            <FolderSharedIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Projects'/>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding onClick={() => setOpen(false)}>
-                    <ListItemButton component='a' href='#contact'>
-                        <ListItemIcon>
-                            <CallIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Contact'/>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding onClick={() => setOpen(false)}>
-                    <ListItemButton component='a' href='#'>
-                        <ListItemIcon>
-                            <HomeIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Home'/>
-                    </ListItemButton>
-                </ListItem>
+                {navLinks.map((link) => (
+                    <ListItem key={link.title} disablePadding onClick={() => linkFunction(link.ref)}>
+                        <ListItemButton component='a' href={link.path}>
+                            <ListItemIcon>
+                                {link.ref === 'Projects' && <FolderSharedIcon />}
+                                {link.ref === 'Contact' && <CallIcon />}
+                                {link.ref === 'Profile' && <HomeIcon />}
+                            </ListItemIcon>
+                            <ListItemText primary={link.ref === 'Contact' ? 'About me' : link.title}/>
+                        </ListItemButton>
+                    </ListItem>
+                ))}
             </List>
     </Box>
   )

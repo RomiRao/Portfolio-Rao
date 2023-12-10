@@ -3,10 +3,12 @@ import Profile from  './Profile.jsx'
 import Contact from  './Contact.jsx'
 import Projects from "./Projects.jsx"
 
-export default function Main() {
+export default function Main({view}) {
   return (
     <Container sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexWrap: 'wrap'}}>
-      <Projects/>
+      {view === 'Profile' && <Profile />}
+      {view === 'Projects' && <Projects />}
+      {view === 'Contact' && <Contact />}
     </Container>
   )
 }
