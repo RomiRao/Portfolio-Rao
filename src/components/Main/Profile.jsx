@@ -12,7 +12,7 @@ export default function Profile() {
   })
 
   return (
-    <Container sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}>
+    <>
       <Img src={image}/>
       <Box>
         <Typography variant="h4" color='secondary'>
@@ -25,6 +25,6 @@ export default function Profile() {
             Developer, traveler and artist.
         </Typography>
       </Box>
-    </Container>
+    </>
   )
 }
