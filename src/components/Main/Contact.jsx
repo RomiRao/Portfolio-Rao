@@ -6,22 +6,23 @@ import {
     IconButton,
     Container,
 } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import { useTheme } from "@mui/system";
+
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import image from "../../assets/profile-photo.jpg";
 import styled from "@emotion/styled";
-import { Padding } from "@mui/icons-material";
+
+const Img = styled("img")({
+    width: "80%",
+    maxWidth: 330,
+    maxHeight: 330,
+    borderRadius: "50%",
+    marginBottom: 5,
+});
 
 export default function Contact() {
-    const Img = styled("img")({
-        width: "80%",
-        maxWidth: 330,
-        maxHeight: 330,
-        borderRadius: "50%",
-        marginBottom: 5,
-    });
+    const theme = useTheme();
 
     return (
         <Container
@@ -35,7 +36,6 @@ export default function Contact() {
                     sm: "column-reverse",
                     md: "row",
                 },
-                backgroundColor: "primary",
             }}
         >
             <Box
@@ -46,6 +46,7 @@ export default function Contact() {
                     width: "90%",
                     maxWidth: "500px",
                     my: 6,
+                    backgroundColor: theme.palette.background.paper,
                 }}
             >
                 <Box>
