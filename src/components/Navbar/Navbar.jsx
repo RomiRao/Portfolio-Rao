@@ -27,6 +27,7 @@ export default function Navbar({ mode, setMode, navLinks }) {
             <AppBar
                 sx={{ bgcolor: "transparent", boxShadow: "none" }}
                 position="static"
+                elevation={0}
             >
                 <Toolbar sx={{ justifyContent: "space-between" }}>
                     <IconButton onClick={() => handleClick()}>
