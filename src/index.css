@@ -1,10 +1,14 @@
-* {
+body {
     margin: 0;
     padding: 0;
+    background-image: radial-gradient(circle, #e1ebf8, #daeaf4, #d4e8ef, #d1e6e8, #cfe4e1, #c7ddda, #bfd7d4, #b7d0cd, #a7c3c6, #9bb6c0, #92a8b8, #8d99ae);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh; 
 }
 
-#root {
-    background-color: aqua;
-    width: 100vw;
-
+.dark-mode {
+    background-image: radial-gradient(circle, #3b4b66, #374761, #33425c, #2f3e57, #2b3a52, #28374e, #263349, #233045, #202c40, #1e293b, #1b2537, #192232);
 }
