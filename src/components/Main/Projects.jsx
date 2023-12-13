@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box } from "@mui/material";
+import { Box, Chip, Stack } from "@mui/material";
 //card components
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -71,6 +71,18 @@ export default function Projects() {
                             <Typography variant="body2" color="text.secondary">
                                 {project.description}
                             </Typography>
+                            <Stack direction="row" mt={2} flexWrap="wrap">
+                                {project.tags.map((tag) => (
+                                    <Chip
+                                        key={tag}
+                                        label={tag}
+                                        color="primary"
+                                        size="small"
+                                        variant="filled"
+                                        sx={{ mr: "4px", my: "4px" }}
+                                    />
+                                ))}
+                            </Stack>
                         </CardContent>
                         <CardActions>
                             <Button
