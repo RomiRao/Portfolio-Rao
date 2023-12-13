@@ -8,7 +8,7 @@ import { createTheme, CssBaseline, ThemeProvider, Box } from "@mui/material";
 import FolderSharedIcon from "@mui/icons-material/FolderShared";
 import CallIcon from "@mui/icons-material/Call";
 import HomeIcon from "@mui/icons-material/Home";
-import { amber, deepOrange, grey } from "@mui/material/colors";
+import { deepOrange, grey } from "@mui/material/colors";
 
 const navLinks = [
     {
