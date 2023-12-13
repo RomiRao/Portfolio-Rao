@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, #f1e0cb, #e9e1cb, #e1e1cd, #dae1d0, #d4e1d3, #cddfd2, #c6dcd2, #bfd9d3, #b3d4d1, #a8cfcf, #9ccacf, #92c4cf);    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh; 
+  }
+
+.dark-mode {
+    background-image: radial-gradient(circle, #3b4b66, #374761, #33425c, #2f3e57, #2b3a52, #28374e, #263349, #233045, #202c40, #1e293b, #1b2537, #192232);
