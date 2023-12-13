@@ -17,7 +17,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 
 export default function Navbar({ mode, setMode, navLinks }) {
     const handleClick = () => {
-        mode ? setMode(false) : setMode(true);
+        mode === "light" ? setMode("dark") : setMode("light");
     };
 
     const [open, setOpen] = useState(false);
@@ -30,8 +30,8 @@ export default function Navbar({ mode, setMode, navLinks }) {
             >
                 <Toolbar sx={{ justifyContent: "space-between" }}>
                     <IconButton onClick={() => handleClick()}>
-                        {!mode && <DarkModeIcon color="primary" />}
-                        {mode && <LightModeIcon color="primary" />}
+                        {mode === "light" && <DarkModeIcon color="primary" />}
+                        {mode === "dark" && <LightModeIcon color="primary" />}
                     </IconButton>
                     <Breadcrumbs
                         separator="/"

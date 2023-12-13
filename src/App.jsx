@@ -8,35 +8,59 @@ import { createTheme, CssBaseline, ThemeProvider, Box } from "@mui/material";
 import FolderSharedIcon from "@mui/icons-material/FolderShared";
 import CallIcon from "@mui/icons-material/Call";
 import HomeIcon from "@mui/icons-material/Home";
+import { amber, deepOrange, grey } from "@mui/material/colors";
+
+const navLinks = [
+    {
+        title: "Projects",
+        path: "/Projects",
+        icon: <FolderSharedIcon />,
+    },
+    {
+        title: "Contact",
+        path: "/Contact",
+        icon: <CallIcon />,
+    },
+    {
+        title: "Home",
+        path: "/",
+        icon: <HomeIcon />,
+    },
+];
 
 export default function App() {
-    const navLinks = [
-        {
-            title: "Projects",
-            path: "/Projects",
-            icon: <FolderSharedIcon />,
-        },
-        {
-            title: "Contact",
-            path: "/Contact",
-            icon: <CallIcon />,
-        },
-        {
-            title: "Home",
-            path: "/",
-            icon: <HomeIcon />,
-        },
-    ];
+    const [mode, setMode] = useState("light");
 
-    const [mode, setMode] = useState(false);
-
-    const theme = createTheme({
+    const getDesignMode = (mode) => ({
         palette: {
-            mode: mode ? "dark" : "light",
+            mode,
+            ...(mode === "light"
+                ? {
+                      // palette values for light mode
+                      primary: amber,
+                      divider: amber[200],
+                      text: {
+                          primary: grey[900],
+                          secondary: grey[800],
+                      },
+                  }
+                : {
+                      // palette values for dark mode
+                      primary: deepOrange,
+                      divider: deepOrange[700],
+                      background: {
+                          default: deepOrange[900],
+                          paper: deepOrange[900],
+                      },
+                      text: {
+                          primary: "#fff",
+                          secondary: grey[500],
+                      },
+                  }),
         },
     });
 
-    const [view, setView] = useState("Profile");
+    const theme = createTheme(getDesignMode(mode));
 
     return (
         <ThemeProvider theme={theme}>
@@ -50,13 +74,8 @@ export default function App() {
                         justifyContent: "space-between",
                     }}
                 >
-                    <Navbar
-                        setView={setView}
-                        setMode={setMode}
-                        mode={mode}
-                        navLinks={navLinks}
-                    />
-                    <Main view={view} navLinks={navLinks} />
+                    <Navbar setMode={setMode} mode={mode} navLinks={navLinks} />
+                    <Main />
                     <Footer />
                 </Box>
             </BrowserRouter>
