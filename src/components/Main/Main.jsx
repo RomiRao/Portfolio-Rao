@@ -1,14 +1,18 @@
 import { Container } from '@mui/material'
-import Profile from  './Profile.jsx'
+import Home from  './Home.jsx'
 import Contact from  './Contact.jsx'
 import Projects from "./Projects.jsx"
+import { Route, Routes } from 'react-router-dom'
 
-export default function Main({view}) {
+export default function Main() {
+  
   return (
-    <Container sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexWrap: 'wrap'}}>
-      {view === 'Profile' && <Profile />}
-      {view === 'Projects' && <Projects />}
-      {view === 'Contact' && <Contact />}
+    <Container sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/Projects' element={<Projects/>}/>
+        <Route path='/Contact' element={<Contact/>}/>
+      </Routes>
     </Container>
   )
 }

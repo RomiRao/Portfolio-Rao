@@ -1,27 +1,18 @@
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import FolderSharedIcon from '@mui/icons-material/FolderShared';
-import CallIcon from '@mui/icons-material/Call';
-import HomeIcon from '@mui/icons-material/Home';
+import { NavLink } from "react-router-dom";
 
-export default function NavListDrawer({setOpen, setView, navLinks }) {
-
-    const linkFunction = (ref) => {
-        setView(ref)
-        setOpen(false)
-    }
+export default function NavListDrawer({setOpen, navLinks }) {
 
   return (
     <Box sx={{width: 280 }} component='nav'>
             <List>
                 {navLinks.map((link) => (
-                    <ListItem key={link.title} disablePadding onClick={() => linkFunction(link.ref)}>
-                        <ListItemButton component='a' href={link.path}>
+                    <ListItem key={link.title} disablePadding onClick={() => setOpen(false)}>
+                        <ListItemButton component={NavLink} to={link.path}>
                             <ListItemIcon>
-                                {link.ref === 'Projects' && <FolderSharedIcon />}
-                                {link.ref === 'Contact' && <CallIcon />}
-                                {link.ref === 'Profile' && <HomeIcon />}
+                                {link.icon}
                             </ListItemIcon>
-                            <ListItemText primary={link.ref === 'Contact' ? 'About me' : link.title}/>
+                            <ListItemText primary={link.title}/>
                         </ListItemButton>
                     </ListItem>
                 ))}
